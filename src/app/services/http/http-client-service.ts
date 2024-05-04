@@ -18,4 +18,8 @@ export class HttpClientService {
     public post(url: string, body: any): Observable<any> {
         return this.httpClient.post(url, body);
     }
+
+    public delete(url: string): Observable<any> {
+        return this.httpClient.delete(url);
+    }
 }

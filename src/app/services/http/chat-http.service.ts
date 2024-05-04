@@ -13,6 +13,18 @@ export class ChatHttpService {
 
   constructor(private httpClient: HttpClientService) { }
 
+
+  public deleteChatChannel(chatChannelId: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      const url = environment.apiUrl + `delete-chat-channel?channelId=${chatChannelId}`;
+      this.httpClient.delete(url).subscribe(() => {
+        resolve();
+      }, (error) => {
+        reject(error);
+      });
+    });
+  }
+
   public addChatChannel(chatChannelName: string): Promise<ChatChannelDto> {
     return new Promise((resolve, reject) => {
       const url = environment.apiUrl + 'add-chat-channel';

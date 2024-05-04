@@ -118,6 +118,13 @@ export class ChatMainComponent implements OnInit, OnDestroy {
     }
   }
 
+  public deleteChannel(event: MouseEvent, chatChannel: ChatChannelDto): void {
+    event.stopPropagation();
+    this.chatHttpService.deleteChatChannel(chatChannel.id).then(() => {
+      this.chatChannels = this.chatChannels.filter((channel) => channel.id !== chatChannel.id);
+    });
+  }
+
   public async handleInputSend(): Promise<void> {
     try {
         const message = this.inputForm.get('input')?.value;
