@@ -8,3 +8,10 @@
     background-color: #F5F5F5;
     height: 100px;
 }
+
+.sidenav-content {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow-y: scroll;
+}
