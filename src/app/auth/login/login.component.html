@@ -1,0 +1,32 @@
+<form [formGroup]="form">
+  <div class="grid">
+    <div class="flex-row"></div>
+    <div class="col-12 flex align-items-center justify-content-center">
+      <h1>Enter Your Information</h1>
+    </div>
+  </div>
+  <div class="flex-row">
+    <div class="col-12 flex align-items-center justify-content-center">
+      <mat-form-field>
+        <input type="email" matInput placeholder="Email..." formControlName="email" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="flex-row">
+    <div class="col-12 flex justify-content-center flex-wrap">
+      <mat-form-field class="flex align-items-center justify-content-center" appearance="fill">
+        <input matInput type="password" placeholder="Password..." formControlName="password" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="flex-row">
+    <div class="col-12 flex justify-content-center flex-wrap">
+      @if(!isLoading) {
+      <button mat-stroked-button class="flex align-items-center justify-content-center" color="primary"
+        (click)="submitUserLogin()">Submit</button>
+      } @else {
+      <mat-spinner class="align-items-center justify-content-center"></mat-spinner>
+      }
+    </div>
+  </div>
+</form>
